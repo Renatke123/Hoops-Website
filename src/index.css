@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bagel-50: #FFF8F0;
+  --color-bagel-100: #FEECDC;
+  --color-bagel-200: #FAD96B;
+  --color-bagel-300: #F5C842;
+  --color-bagel-400: #E8A838;
+  --color-bagel-500: #C4841D;
+  --color-bagel-600: #8B6914;
+  --color-bagel-700: #6B4F10;
+  --color-bagel-800: #4A2C0A;
+  --color-bagel-900: #2D1B06;
+  --color-cream: #F5E6C8;
+  --color-cream-dark: #E8D5A8;
+  --color-fresh: #6B8E23;
+  --color-fresh-light: #8FBC3A;
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Space Grotesk', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-bagel-50);
+  color: var(--color-bagel-900);
+}
+
+/* Hide scrollbar for horizontal scroll */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom scrollbar for menu */
+.menu-scroll::-webkit-scrollbar {
+  height: 6px;
+}
+.menu-scroll::-webkit-scrollbar-track {
+  background: var(--color-bagel-100);
+  border-radius: 3px;
+}
+.menu-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-bagel-400);
+  border-radius: 3px;
+}
+.menu-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bagel-500);
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #C4841D, #E8A838, #F5C842);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Bagel ring decoration */
+.bagel-ring {
+  border: 6px solid var(--color-bagel-400);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  position: relative;
+}
+.bagel-ring::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: var(--color-bagel-50);
+  border-radius: 50%;
+}
+
+/* Drag cursor */
+.cursor-grab {
+  cursor: grab;
+}
+.cursor-grab:active {
+  cursor: grabbing;
+}
+
+/* Star rating */
+.star-filled {
+  color: #F5C842;
+}
